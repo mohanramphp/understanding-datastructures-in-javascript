@@ -99,7 +99,7 @@ const deQueue = () => {
 }
 ```
 
-Full implementation is here
+Full implementation is [here](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/queue/js/index.js)
 
 ```javascript
 let Queue = function () {
