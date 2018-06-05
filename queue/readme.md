@@ -11,7 +11,7 @@
 
 Basically delete or removal happens based on **First In First Out**
 
-Beginning of the Queue is called as ```head``` and End of Queue is a ```tail```
+Pointer representation to the beginning of the Queue is called as ```head``` and end of the Queue is a ```tail```
 
 Basically two operations are supported by queue by default, they are 
 * Enqueue
