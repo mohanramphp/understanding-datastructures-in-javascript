@@ -2,32 +2,32 @@
     /**
      * Simplest Implementation of Stack
      */
-    /*  let Stack = function () {
-         const list = [],
-             push = data => list.push(data),
-             pop = () => list.pop(),
-             size = () => list.length,
-             viewStack = () => '(bottom) ' + list.join(' -> ') + ' (top)';
-         return Object.freeze({
-             push,
-             pop,
-             size,
-             viewStack
-         });
-     }
-     const s = new Stack();
-     console.log('push operations');
-     s.push(1); // 1 enters in stack
-     s.push(2); // 2 enters in stack
-     s.push(3); // 3 enters in stack
- 
-     console.log('state of stack is');
-     console.log(s.viewStack()); // (bottom) 1 -> 2 -> 3 (top)
- 
-     console.log('pop operations');
-     console.log(s.pop()); // 3
-     console.log(s.pop()); // 2
-     console.log(s.pop()); // 1 */
+    /* let Stack = function () {
+        const list = [],
+            push = data => list.push(data),
+            pop = () => list.length > 0 ? list.pop() : undefined,
+            size = () => list.length,
+            viewStack = () => '(bottom) ' + list.join(' -> ') + ' (top)';
+        return Object.freeze({
+            push,
+            pop,
+            size,
+            viewStack
+        });
+    }
+    const s = new Stack();
+    console.log('push operations');
+    s.push(1); // 1 enters in stack
+    s.push(2); // 2 enters in stack
+    s.push(3); // 3 enters in stack
+
+    console.log('state of stack is');
+    console.log(s.viewStack()); // (bottom) 1 -> 2 -> 3 (top)
+
+    console.log('pop operations');
+    console.log(s.pop()); // 3
+    console.log(s.pop()); // 2
+    console.log(s.pop()); // 1 */
 
     let Stack = function () {
         const storage = Object.create(null);  // key, value pairs

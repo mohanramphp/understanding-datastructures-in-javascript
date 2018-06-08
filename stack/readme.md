@@ -9,11 +9,17 @@
 > 1. Element/data is inserted to top of the stack
 > 2. Element/data is deleted or removed from the top.
 
-Basically delete or removal happens based on **Last In First Out**
+Basically, delete or removal happens based on **Last In First Out**
 
 Two operations are supported by stack by default, they are 
 * ```Push``` - To add data to stack
 * ```Pop``` - To remove data from the stack
+
+**Two important concepts** need to know about stack before, we start coding is 
+1. Stack overflows  
+This represents the status of the stack when the size of a stack exceeds the maximum allowed number — stack bound — say n. Normally this number is defined before hand.
+2. Stack underflows  
+It is the status when an empty stack is popped. This is not a big issue we can have protection check before we try to pop() a stack.
 
 The simplest implementation of the Stack is 
 ```javascript
@@ -23,7 +29,7 @@ The simplest implementation of the Stack is
 let Stack = function () {
     const list = [],
         push = data => list.push(data),
-        pop = () => list.pop(),
+        pop = () => list.length > 0 ? list.pop() : undefined,
         size = () => list.length,
         viewStack = () => '(bottom) ' + list.join(' -> ') + ' (top)';
     return Object.freeze({
@@ -51,10 +57,10 @@ Above code is self explainatory, we basically used an array to acheive the imple
 
 Though the big O time complexity of above code takes ```O(1)``` for push and pop
 
-One drawbacks of above code is
+One drawbacks from the above code is
 * Array needs to keep its order, hence it takes up a block of space (consecutive memory allocation).
 
-Lets implement with Object.
+Moreover every thing in JavaScript is an Object. Lets implement with Object.
 
 1. Basic structure of a stack
 ```javascript
