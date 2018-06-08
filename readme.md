@@ -29,9 +29,14 @@ Go to the specific datastructure folder via command prompt and run http-server
 ---
 
 ```sh
-c:> cd c:\workspace\git\understanding-datastructures-in-javascript\queue
+c:> cd c:\xxx\xxx\xxx\understanding-datastructures-in-javascript\queue
 c:> http-server
 ```
+
+> Navigate to [http://localhost:8080](http://localhost:8080)
+
+You can find the results in the __```developer console```__
+
 
 
 
