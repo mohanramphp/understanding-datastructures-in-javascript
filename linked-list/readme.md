@@ -59,7 +59,7 @@ const SinglyLinkedList = function () {
 ```    
 3. Now, lets define three basic operations of singly linked list  
 
-And the full implemenation is here
+And the full implemenation is [here](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/linked-list/js/index.js)
 
 ```javascript
 const Node = function (value) {
@@ -236,7 +236,7 @@ const DoublyLinkedList = function () {
 ```    
 3. Now, lets define three basic operations of singly linked list  
 
-And the full implemenation is here
+And the full implemenation is [here](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/linked-list/js/index.js)
 
 ```javascript
 const DoublyLinkedList = function () {
