@@ -401,7 +401,7 @@ Complexity of the process are below
 1. When we need to do **lot of insert and delete operations** in the list, go for linked list since insertions and deletions are simpler than for array.
 2. When node searching is not that important.
 3. For large data, **moving pointers is easier and faster** than moving items themselves.
-4. **Overflow on list will never** occur because it doesn’t require a contiguous block of memory, unless the memory is actually full (not so relevant in JavaSript).
+4. **Overflow on list will never occur** because it doesn’t require a contiguous block of memory, unless the memory is actually full (not so relevant in JavaSript).
 5. We need to **split or combine** different list together, because splitting and joining lists is very efficient.
 
 ## Disadvantages are ##
