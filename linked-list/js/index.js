@@ -120,6 +120,8 @@
 
 
     let l = new SinglyLinkedList();
+    console.log('SinglyLinkedList');
+    console.log('--------------------------------------------');
     console.log('insertNodeAtFirst operations');
     l.insertNodeAtFirst('one'); // one enters in list
     l.insertNodeAtFirst('two'); // two enters in list
@@ -145,6 +147,7 @@
 
     console.log('size of the list is');
     console.log(l.listSize()); // 4
+    console.log('--------------------------------------------');
 
     const DoublyLinkedList = function () {
         let head = undefined,
@@ -269,6 +272,8 @@
     }
 
     let d = new DoublyLinkedList();
+    console.log('DoublyLinkedList');
+    console.log('--------------------------------------------');
     console.log('insertNodeAtFirst operations');
     d.insertNodeAtFirst('one'); // one enters in list
     d.insertNodeAtFirst('two'); // two enters in list
@@ -294,5 +299,6 @@
 
     console.log('size of the list is');
     console.log(d.listSize()); // 4
+    console.log('--------------------------------------------');
 
 })();

@@ -207,17 +207,12 @@ console.log(l.listSize()); // 4
 ```
 
 Complexity of the process are below
-insertNodeAtFirst,
-        insertNodeAtLast,
-        deleteNode,
-        searchNode,
-        listSize,
-        print
 * **insertNodeAtFirst** - O(1).
 * **insertNodeAtLast** - O(n) - ```n``` is the size of the list.
 * **deleteNode** - O(n) - ```n``` is the length of iteration till value match found.
 * **searchNode** - O(n) - ```n``` is the length of iteration till value match found.
 * **print** - O(n) - ```n``` is the size of the list .
+
 
 ## Doubly Linked List Implemenation ##
 ---
@@ -394,9 +389,29 @@ console.log('size of the list is');
 console.log(d.listSize()); // 4
 ```
 
+Complexity of the process are below
+* **insertNodeAtFirst** - O(1).
+* **insertNodeAtLast** - O(1) since we have two way pointer connections.
+* **deleteNode** - O(n) - ```n``` is the length of iteration till value match found.
+* **searchNode** - O(n) - ```n``` is the length of iteration till value match found.
+* **print** - O(n) - ```n``` is the size of the list .
+
+## When to use linked list ##
+---
+1. When we need to do lot of inster and delete oprations in the list, go for linked list since insertions and deletions are simpler than for array.
+2. When node earching is not that important.
+3. For large data, moving pointers is easier and faster than moving items themselves.
+4. Overflow on list will never occur because it doesn’t require a contiguous block of memory, unless the memory is actually full (not so relevant in JavaSript).
+5. We need to split or combine different list together, because splitting and joining lists is very efficient.
+
+## Disadvantages are ##
+---
+
+1. Linked List required extra space for storing pointers.
+2. Can’t really randomly access an item in the list — there is no real index to access item like in array.
+3. Arrays allow better memory locality and cache performance.
+
+> **_Do not try to sort (merge sort or any thing) a Linked List._**
+
 > Thanks for reading!!!
-
-
-
-
 
