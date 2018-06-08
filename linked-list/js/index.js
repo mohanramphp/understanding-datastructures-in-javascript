@@ -24,7 +24,7 @@
             const node = new Node(item);
 
             /**
-             * Check if it is not the first element in list,
+             * check if it is not the first element in list,
              * if so, update the node next pointer to point to old head
              * */
             if (head) {

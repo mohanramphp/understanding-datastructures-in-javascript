@@ -83,7 +83,7 @@ const SinglyLinkedList = function () {
         const node = new Node(item);
 
         /**
-         * Check if it is not the first element in list,
+         * check if it is not the first element in list,
          * if so, update the node next pointer to point to old head
          * */
         if (head) {
@@ -209,8 +209,8 @@ console.log(l.listSize()); // 4
 Complexity of the process are below
 * **insertNodeAtFirst** - O(1).
 * **insertNodeAtLast** - O(n) - ```n``` is the size of the list.
-* **deleteNode** - O(n) - ```n``` is the length of iteration till value match found.
-* **searchNode** - O(n) - ```n``` is the length of iteration till value match found.
+* **deleteNode** - O(n) - ```n``` is the length of iteration till  match value is found.
+* **searchNode** - O(n) - ```n``` is the length of iteration till  match value is found.
 * **print** - O(n) - ```n``` is the size of the list .
 
 
