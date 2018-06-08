@@ -398,17 +398,17 @@ Complexity of the process are below
 
 ## When to use linked list ##
 ---
-1. When we need to do lot of insert and delete operations in the list, go for linked list since insertions and deletions are simpler than for array.
+1. When we need to do **lot of insert and delete operations** in the list, go for linked list since insertions and deletions are simpler than for array.
 2. When node searching is not that important.
-3. For large data, moving pointers is easier and faster than moving items themselves.
-4. Overflow on list will never occur because it doesn’t require a contiguous block of memory, unless the memory is actually full (not so relevant in JavaSript).
-5. We need to split or combine different list together, because splitting and joining lists is very efficient.
+3. For large data, **moving pointers is easier and faster** than moving items themselves.
+4. **Overflow on list will never** occur because it doesn’t require a contiguous block of memory, unless the memory is actually full (not so relevant in JavaSript).
+5. We need to **split or combine** different list together, because splitting and joining lists is very efficient.
 
 ## Disadvantages are ##
 ---
 
-1. Linked List required extra space for storing pointers.
-2. Can’t really randomly access an item in the list — there is no real index to access item like in array.
+1. Linked List required **extra space** for storing pointers.
+2. **Randomly access an item in the list is difficult** — there is no real index to access item like in array.
 3. Arrays allow better memory locality and cache performance.
 
 > **_Do not try to sort (merge sort or any thing) a Linked List._**
