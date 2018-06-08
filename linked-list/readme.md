@@ -19,7 +19,7 @@ Pointer concept is extremely important in many programming languages like C/C++
 
 In Linked List structure, Pointers are used as connections to hold pieces of the structure together. And therefore:
 
-    Linked List is the structure where all elements are arranged in linear order, which is determined by pointer stored in each element.
+> Linked List is the structure where all elements are arranged in linear order, which is determined by pointer stored in each element.
 
 > * On comparing with Array data structure, Linked List is a flexible presentation for dynamic sets. 
 > * Elements in Linked List do not need to be allocate in the same block of memory (as in Array), but can be connected/chained together using pointer to form a list.
