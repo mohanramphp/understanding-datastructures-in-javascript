@@ -274,7 +274,7 @@ const DoublyLinkedList = function () {
 
     /**
      * insertNodeAtLast method - inserts the node to the end of the list.
-     * running time will be O(1) - since we have two way poniter connection.
+     * running time will be O(1) - since we have two way pointer connection.
      */
     const insertNodeAtLast = (item) => {
         // create new Node to wrap around the item data.
