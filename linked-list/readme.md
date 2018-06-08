@@ -392,8 +392,8 @@ console.log(d.listSize()); // 4
 Complexity of the process are below
 * **insertNodeAtFirst** - O(1).
 * **insertNodeAtLast** - O(1) since we have two way pointer connections.
-* **deleteNode** - O(n) - ```n``` is the length of iteration till value match found.
-* **searchNode** - O(n) - ```n``` is the length of iteration till value match found.
+* **deleteNode** - O(n) - ```n``` is the length of iteration till match value is found.
+* **searchNode** - O(n) - ```n``` is the length of iteration till match value is found
 * **print** - O(n) - ```n``` is the size of the list .
 
 ## When to use linked list ##
