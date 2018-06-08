@@ -2,7 +2,7 @@
 
 In this section, we will be learning linked list datastructure.
 
-![Queue Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/linked-list/images/linked-list.jpg)
+![Linked List Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/linked-list/images/linked-list.jpg)
 
 
 > A linked list is a linear sequence of elements known as nodes.
