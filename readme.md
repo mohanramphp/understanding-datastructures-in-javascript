@@ -2,10 +2,14 @@
 
 > The purpose of this repository is to understand the datastructures and a work out implementation of the data structure in JavaScript.
 
+[queue readme link]: https://github.com/mohanramphp/understanding-datastructures-in-javascript/blob/master/queue/readme.md
+[stack readme link]: https://github.com/mohanramphp/understanding-datastructures-in-javascript/blob/master/stack/readme.md
+[linked list readme link]: https://github.com/mohanramphp/understanding-datastructures-in-javascript/blob/master/linked-list/readme.md
+
 Datastructures so far talked about
-1. Queue
-2. Stack
-3. Linked List
+1. [Queue][queue readme link]
+2. [Stack][stack readme link]
+3. [Linked List][linked list readme link]
     1. Singly Linked List
     2. Doubly Linked List
 
