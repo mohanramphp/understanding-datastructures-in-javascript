@@ -1,4 +1,19 @@
 (function () {
+
+    const Queue = function () {
+        const list = [],
+            enQueue = data => list.push(data),
+            deQueue = () => list.shift(),
+            viewQueue = () => '(tail) ' + [...list].reverse().join(' -> ') + ' (head)',
+            isEmpty = () => !!list.length;
+        return Object.freeze({
+            enQueue,
+            deQueue,
+            viewQueue,
+            isEmpty
+        });
+    }
+
     /**
      * function to create tree node
      * @param {*} data
@@ -142,6 +157,11 @@
             }
         }
 
+        /**
+         * function to traverse tree via depth first algorithm - inorder [L, V, R], preorder [V, L, R] and postorder [L, R, V]
+         * @param {*} mode
+         * @param {*} node
+         */
         const traversal = (mode = traversalMode.inorder, node = root) => {
             traversalResult = [];
             switch (mode) {
@@ -157,6 +177,35 @@
             }
             return traversalResult.join(' -> ');
         }
+        /**
+         * function to find the node via breadth first algorithm
+         * @param {*} data
+         * @param {*} node
+         */
+        const breadthFirstTraversal = (data = null) => {
+            // initializting empty queue
+            const result = [];
+            const queue = new Queue();
+            queue.enQueue(root);
+            while (queue.isEmpty()) {
+                // Remove the currentNode from the queue.
+                const currentNode = queue.deQueue();
+                result.push(currentNode.data);
+                if (currentNode.data === data) {
+                    return result.join(' -> ');
+                } else {
+                    // If currentNode has a left child node, add it to the queue.
+                    if (currentNode.left !== null) {
+                        queue.enQueue(currentNode.left)
+                    }
+                    // If currentNode has a right child node, add it to the queue.
+                    if (currentNode.right !== null) {
+                        queue.enQueue(currentNode.right)
+                    }
+                }
+            }
+            return result.join(' -> ');
+        }
 
         return Object.freeze({
             insert,
@@ -164,7 +213,8 @@
             traversal,
             traversalMode,
             getRootNode,
-            search
+            search,
+            breadthFirstTraversal
         });
     }
 
@@ -182,6 +232,8 @@
     bst.insert(27);
     console.log('tree result after insertion');
     console.log(JSON.stringify(bst.getRootNode(), 0, 4));
+    console.log('breath first traversal path');
+    console.log(bst.breadthFirstTraversal());
     console.log('inorder traversal from root node');
     console.log(bst.traversal(bst.traversalMode.inorder));
     console.log('preorder traversal from root node');
