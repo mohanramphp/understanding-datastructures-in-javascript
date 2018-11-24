@@ -1,4 +1,4 @@
-(function () {
+; (function () {
 
     const Queue = function () {
         const list = [],
