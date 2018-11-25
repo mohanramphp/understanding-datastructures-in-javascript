@@ -2,7 +2,7 @@
 
 In this section, we will be learning binary search tree datastructure.
 
-![Linked List Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/binary-search-tree.png)
+![Binary Search Tree Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/binary-search-tree.png)
 
 
 > A Binary Search tree is a binary tree in which nodes which have lesser value are stored on the left while the nodes with higher value are stored at the right
@@ -20,7 +20,6 @@ We would discuss on the following features like
 * remove node
 * get root node
 * search
-* traversalMode - **inorder, preorder, postorder**
 * tree traversal
     * depth first traversal
         * inorder (Left, Visit, Right)
@@ -197,6 +196,140 @@ const search = (data, parentNode = root) => {
 }
 ```
 
+# Tree Traversal #
+In general with tree datastructure there are two types of traversals are possible.
+1. Breadth first algorithm
+2. Depth first algorithm
 
+![tree traversal algorithm Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/traversal-algo.jpeg)
+
+## Breadh first algorithm
+Breadh first algorithm, in simple is to traverse through each layer of the tree till the last layer.
+
+![Breadh first algorithm Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/breadth-first.jpg)
+
+### Logic
+> To traverse layer by layer, we need a linear datastructure [Queue](https://github.com/mohanramphp/understanding-datastructures-in-javascript/tree/master/queue) to manage the nodes.
+
+1. Initialize result array and a queue
+2. Enqueue root node in the queue.
+3. iterate through the queue till its empty.
+4. Dequeue a node and check if that node has left node if yes, enqueue that node in the queue.
+5. Dequeue a node and check if that node has right node if yes, enqueue that node in the queue.
+- In addition to the steps above we collect the dequeue node data in an array ```result``` to expose the traverse path.
+
+
+```javascript
+/**
+* function to find the node via breadth first algorithm
+* @param {*} data
+* @param {*} node
+*/
+const breadthFirstTraversal = (data = null) => {
+    // initializting empty queue
+    const result = [];
+    const queue = new Queue();
+    queue.enQueue(root);
+    while (queue.isEmpty()) {
+        // Remove the currentNode from the queue.
+        const currentNode = queue.deQueue();
+        result.push(currentNode.data);
+        if (currentNode.data === data) {
+            return result.join(' -> ');
+        } else {
+            // If currentNode has a left child node, add it to the queue.
+            if (currentNode.left !== null) {
+                queue.enQueue(currentNode.left)
+            }
+            // If currentNode has a right child node, add it to the queue.
+            if (currentNode.right !== null) {
+                queue.enQueue(currentNode.right)
+            }
+        }
+    }
+    return result.join(' -> ');
+}
+
+/**
+ * simpest implementation of queue data structure
+ */
+const Queue = function () {
+    const list = [],
+        enQueue = data => list.push(data),
+        deQueue = () => list.shift(),
+        viewQueue = () => '(tail) ' + [...list].reverse().join(' -> ') + ' (head)',
+        isEmpty = () => !!list.length;
+    return Object.freeze({
+        enQueue,
+        deQueue,
+        viewQueue,
+        isEmpty
+    });
+}
+```
+
+## Depth first algorithm
+Depth first algorithm, in simple is to traverse through each branch of the tree till leaf is reached out.
+There are three famous ways to achieve Depth first
+1. Inorder (Left Node, Visit Node, Right Node)
+2. Preorder (Visit Node, Left Node, Right Node)
+3. Postorder (Left Node, Right Node, Visit Node)
+
+![Depth first algorithm Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/depth-first-algojpeg.jpeg)
+
+```javascript
+const traversalMode = {
+    'inorder': Symbol('inorder'),
+    'preorder': Symbol('preorder'),
+    'postorder': Symbol('postorder')
+};
+
+const inOrderTraversal = (node) => {
+    if (node !== null) {
+        inOrderTraversal(node.left);
+        traversalResult.push(node.data);
+        inOrderTraversal(node.right);
+    }
+}
+
+const preOrderTraversal = (node) => {
+    if (node !== null) {
+        traversalResult.push(node.data);
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
+    }
+}
+
+const postOrderTraversal = (node) => {
+    if (node !== null) {
+        postOrderTraversal(node.left);
+        postOrderTraversal(node.right);
+        traversalResult.push(node.data);
+    }
+}
+
+/**
+ * function to traverse tree via depth first algorithm - inorder [L, V, R], preorder [V, L, R] and postorder [L, R, V]
+ * @param {traversalMode} mode
+ * @param {*} node
+ */
+const traversal = (mode = traversalMode.inorder, node = root) => {
+    traversalResult = [];
+    switch (mode) {
+        case traversalMode.inorder:
+            inOrderTraversal(node);
+            break;
+        case traversalMode.preorder:
+            preOrderTraversal(node);
+            break;
+        case traversalMode.postorder:
+            postOrderTraversal(node);
+            break;
+    }
+    return traversalResult.join(' -> ');
+}
+```
+
+You can find the complete code [here](https://github.com/mohanramphp/understanding-datastructures-in-javascript/blob/master/binary-search-tree/js/index.js)
 
 > Thanks for reading!!!

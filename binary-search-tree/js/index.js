@@ -1,5 +1,8 @@
 ; (function () {
 
+    /**
+     * function which implements queue data structure
+     */
     const Queue = function () {
         const list = [],
             enQueue = data => list.push(data),
@@ -168,7 +171,7 @@
 
         /**
          * function to traverse tree via depth first algorithm - inorder [L, V, R], preorder [V, L, R] and postorder [L, R, V]
-         * @param {*} mode
+         * @param {traversalMode} mode
          * @param {*} node
          */
         const traversal = (mode = traversalMode.inorder, node = root) => {
@@ -187,10 +190,10 @@
             return traversalResult.join(' -> ');
         }
         /**
-         * function to find the node via breadth first algorithm
-         * @param {*} data
-         * @param {*} node
-         */
+        * function to find the node via breadth first algorithm
+        * @param {*} data
+        * @param {*} node
+        */
         const breadthFirstTraversal = (data = null) => {
             // initializting empty queue
             const result = [];
