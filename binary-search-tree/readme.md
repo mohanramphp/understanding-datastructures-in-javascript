@@ -209,7 +209,7 @@ Breadh first algorithm, in simple is to traverse through each layer of the tree 
 ![Breadh first algorithm Figure](https://raw.githubusercontent.com/mohanramphp/understanding-datastructures-in-javascript/master/binary-search-tree/images/breadth-first.jpg)
 
 ### Logic
-> To traverse layer by layer, we need a linear datastructure [Queue](https://github.com/mohanramphp/understanding-datastructures-in-javascript/tree/master/queue) to manage the nodes.
+> To traverse layer by layer, we need a linear datastructure [Queue](https://github.com/mohanramphp/understanding-datastructures-in-javascript/blob/master/queue/readme.md) to manage the nodes.
 
 1. Initialize result array and a queue
 2. Enqueue root node in the queue.
