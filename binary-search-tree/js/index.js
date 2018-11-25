@@ -27,21 +27,31 @@
     const BinarySearchTree = function () {
         let root = null;
         let traversalResult = [];
+
         // function to insert node in the tree
         const insert = data => {
             const node = new Node(data);
+            // if root node exists traverse through the root to find the location to insert
+            // otherwise assign the node to the root
             root ? insertNode(root, node) : root = node;
         }
 
         // helper function to locate the node position to insert in the tree
         const insertNode = (parentNode, node) => {
+            // check if the node data is less than the parent node data
             if (node.data < parentNode.data) {
+                // then handle left
+                // check if left node is not available, then locate the node as the left node
+                // otherwise traverse throught the left path
                 if (parentNode.left === null) {
                     parentNode.left = node;
                 } else {
                     insertNode(parentNode.left, node)
                 }
             } else {
+                // then handle right
+                // check if right node is not available, then locate the node as the right node
+                // otherwise traverse throught the right path
                 if (parentNode.right === null) {
                     parentNode.right = node;
                 } else {
@@ -101,7 +111,6 @@
         }
 
         // function to search for a node with given data
-        // this method uses depth first algorithm
         const search = (data, parentNode = root) => {
             // if trees is empty return null
             if (parentNode === null) {
@@ -210,10 +219,10 @@
         return Object.freeze({
             insert,
             remove,
-            traversal,
-            traversalMode,
             getRootNode,
             search,
+            traversalMode,
+            traversal,
             breadthFirstTraversal
         });
     }
